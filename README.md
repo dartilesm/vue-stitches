@@ -60,10 +60,11 @@ Vue.use(VueStitches); // Use it through as plugin
 Read more about nuxt plugins [here](https://nuxtjs.org/docs/configuration-glossary/configuration-plugins/)
 
 > Previously what we did was globally register **vue-stitches** to be
-> able to use it in our components
+> able to use it in our components or elements
 
 ### Usage
-Use VueStitches in your components as **v-stitches** directive and pass them your css styles. Let's see an example
+Use VueStitches in your components or elements as **v-stitches** directive. The directive expects an array with two positions `[cssFunction, variantObj]` or css function directly `cssFunction`.
+Let's see an example
 ```
 // styles.js
 
@@ -101,10 +102,12 @@ export default text;
 // path/to/component.js
 
 <template>
-  <span v-stitches="styles" :color="color" :weight="weight" :size="size"
-    >A {{ weight }} {{ size }} size text colored {{ color }}
+  <span v-stitches="[styles, { color, weight, size }]"> 
+    A {{ weight }} {{ size }} size text colored {{ color }}
   </span>
+  <span v-stitches="styles">Hi!</span>
 </template>
+
 <script>
 import styles from "./styles.js";
 
@@ -122,8 +125,5 @@ export default {
 </script>
 
 ```
-
-> As you can see, you can use the variants through props like
-> **@stitches/react** thanks to v-stitches directive.
-
-Read more abuout stitches [here](https://stitches.dev/docs/introduction)
+Read more about stitches [here](https://stitches.dev/docs/introduction)
+If you want to know more ways to use Stitches in Vue, please check this [post](https://dartiles.dev/blog/how-to-use-stitches-in-vue-nuxt)
