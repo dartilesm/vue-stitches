@@ -1,6 +1,6 @@
 {
   "name": "vue-stitches",
-  "version": "0.0.1-alpha.3",
+  "version": "0.0.1-alpha.4",
   "main": "./lib/vue-stitches.common.js",
   "description": "Use stitches in your Vue projects",
   "keywords": ["css-in-js", "css", "stitches", "vue", "nuxt", "stitches/core", "stiches in vue", "vue-stitches"],
