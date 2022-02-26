@@ -10,21 +10,22 @@
 ## Get started
 
 ### Installation
-
-    npm install vue-stitches@latest
+```console
+npm install vue-stitches@latest
+```
 or
-
-    yarn add vue-stitches@latest
-
+```console
+yarn add vue-stitches@latest
+```
 #### Vue 3
 
-```
+```javascript
 // File where you mount the vue application
-import  {  createApp  }  from  "vue";
-import  App  from  "./App.vue";
-import  VueStitches  from  "vue-stitches"; // Import VueStitches from library
+import { createApp } from "vue";
+import App from "./App.vue";
+import VueStitches from "vue-stitches"; // Import VueStitches from library
 
-const  app  =  createApp(App);
+const app = createApp(App);
 app.use(VueStitches); // Use it through as plugin
 app.mount("#app");
 
@@ -33,16 +34,16 @@ Read more about vue plugins [here](https://vuejs.org/guide/reusability/plugins.h
 
 #### Vue 2
 
-```
+```javascript
 // File where you mount the vue application
-import  Vue  from  "vue";
-import  App  from  "./App.vue";
-import  VueStitches  from  "vue-stitches";
+import Vue from "vue";
+import App from "./App.vue";
+import VueStitches from "vue-stitches";
 
 Vue.use(VueStitches); // Use it through as plugin
-new  Vue({
-	el:  "#app",
-	render:  (h)  =>  h(App)
+new Vue({
+  el:  "#app",
+  render:  (h)  =>  h(App)
 });
 
 ```
@@ -50,10 +51,10 @@ Read more about vue plugins [here](https://v2.vuejs.org/v2/guide/plugins.html#Us
 
 
 #### Nuxt
-```
+```javascript
 // plugins/vue-stitches.js
-import  Vue  from  "vue";
-import  VueStitches  from  "vue-stitches";
+import Vue from "vue";
+import VueStitches from "vue-stitches";
 
 Vue.use(VueStitches); // Use it through as plugin
 ```
@@ -63,9 +64,12 @@ Read more about nuxt plugins [here](https://nuxtjs.org/docs/configuration-glossa
 > able to use it in our components or elements
 
 ### Usage
-Use VueStitches in your components or elements as **v-stitches** directive. The directive expects an array with two positions `[cssFunction, variantObj]` or css function directly `cssFunction`.
-Let's see an example
-```
+Use VueStitches in your components or elements as **v-stitches** directive.
+
+The directive expects an array with two positions `[cssFunction, variantObj]` or css function directly `cssFunction`.
+
+Let's see an example:
+```javascript
 // styles.js
 
 import { css } from "@stitches/core";
@@ -98,8 +102,8 @@ const text = css({
 export default text;
 ```
 
-```
-// path/to/component.js
+```vue
+<!-- path/to/component.js -->
 
 <template>
   <span v-stitches="[styles, { color, weight, size }]"> 
@@ -126,4 +130,5 @@ export default {
 
 ```
 Read more about stitches [here](https://stitches.dev/docs/introduction)
+
 If you want to know more ways to use Stitches in Vue, please check this [post](https://dartiles.dev/blog/how-to-use-stitches-in-vue-nuxt)
